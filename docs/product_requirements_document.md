@@ -1,226 +1,229 @@
-# AI Dungeon Master - Product Requirements Document
+# [Your Project Name] - Product Requirements Document
+
+> **Template Note**: This is a template for writing product requirements documents for AI-powered applications. Replace all bracketed placeholders with your project-specific content and remove this note.
 
 ## Background and Problem Statement
 
-Tabletop roleplaying games (TTRPGs) like Dungeons & Dragons have been a popular form of collaborative storytelling and gaming for decades. However, traditional TTRPGs require a Dungeon Master to orchestrate the game, create narratives, manage rules, and control non-player characters. This creates a significant barrier to entry for new players and those who cannot find a consistent group to play with. Additionally, the complex rules system can be intimidating for beginners and time-consuming even for experienced players.
+[Describe the current situation and the problem your product aims to solve]
 
-Many potential players face significant barriers to enjoying tabletop roleplaying games:
-- Difficulty finding a skilled and available Dungeon Master
-- Challenges coordinating schedules among multiple players
-- Steep learning curve for game rules and mechanics
-- Limited access to visual aids and battle maps
-- Inconsistent gameplay experiences depending on the Dungeon Master's style and preparation
-- Inability to play spontaneously or on-demand
-- Lack of persistence in character development and campaign progression when groups disband
+[Include details about:
+- Current state of the market/industry
+- Specific pain points users experience
+- Why existing solutions are inadequate
+- Who is affected by this problem
+- The impact of not solving this problem]
 
-These barriers prevent many interested players from experiencing the rich storytelling and immersive gameplay that TTRPGs can offer, resulting in a significant unmet demand in the market.
+**Example structure:**
+- Problem overview and context
+- Specific user challenges (bulleted list)
+- Market gap analysis
+- Impact statement
 
 ## Product Vision Statement
 
-Secure the Realm will democratize access to high-quality tabletop roleplaying experiences by providing an AI-powered platform that eliminates the need for a human Dungeon Master while preserving the creativity, flexibility, and immersion of traditional TTRPGs. Our vision is to create a system where anyone, anywhere can instantly jump into a personalized adventure tailored to their preferences, play style, and available time. Through specialized AI agents working in concert, we will deliver a seamless, engaging, and visually rich gaming experience that adapts to player choices and creates memorable stories worth sharing.
+[Write a clear, compelling vision statement that describes what your product will achieve and how it will transform the user experience]
+
+[Your vision should include:
+- What the product will accomplish
+- Who will benefit from it
+- How it will solve the identified problems
+- The unique value proposition
+- Long-term goals and aspirations]
 
 ## Architecture
 
-The Secure the Realm platform is built on the Python Microsoft Semantic Kernel framework, Typescript frontend. Semantic Kernel provides a multi-agent architecture, where each agent serves a specialized role in the tabletop RPG experience. Semantic Kernel will interface with Azure OpenAI LLMs using Python to enable the use of "plugins". This allows the LLMs to perform takes like storing and retrieving data. The Kernel enables the selection of the correct AI agent, function and plugin for the task at hand, rather than relying on a strict workflow.
+[Describe your product's technical architecture and how components work together]
+
+This template supports applications built with Python Microsoft Semantic Kernel framework and TypeScript frontends. The architecture enables multi-agent AI systems where specialized agents collaborate to deliver comprehensive functionality.
+
+**Template Architecture Includes:**
+- **Backend Framework**: Python with Semantic Kernel for AI agent orchestration
+- **Frontend Framework**: TypeScript for user interface development
+- **AI Integration**: Support for Azure OpenAI and other LLM providers
+- **Plugin System**: Extensible plugin architecture for specialized functionality
+- **Agent Communication**: Dynamic routing and coordination between AI agents
 
 ## Agent Definitions
 
-1. **Dungeon Master Agent (Orchestrator Agent)**
-   - Primary user-facing agent that coordinates all other agents
-   - Manages player interactions and conversation flow
-   - Routes appropriate tasks to specialized agents
-   - Maintains cohesion across the gameplay experience
-   - Ensures continuity of game rules and narrative
+[Define your AI agents and their specific roles and responsibilities]
 
-2. **Narrator Agent**
-   - Manages campaign narrative and storylines
-   - Determines whether a skill check is required
-   - Handles skill checks, and outcomes
-   - Maintains campaign facts and story elements
-   - Generates descriptions of environments, NPCs, and situations
-   - Interprets player actions within the game world context
-   - Stores key narrative data in structured format for recall
+**Template Agent Examples:**
 
-3. **Scribe Agent**
-   - Manages character sheets and player data
-   - Tracks inventory, equipment, and loot
-   - Handles NPC data and attributes
-   - Monitors spell slots, abilities, and resources
-   - Maintains structured data records for lookup and recall excluding campaign data managed by Narrator
+1. **[Primary Agent Name] (Orchestrator Agent)**
+   - [Primary responsibility and role]
+   - [Key functions it performs]
+   - [How it coordinates with other agents]
+   - [User interaction responsibilities]
 
-4. **Combat MC Agent**
-   - Creates balanced encounter scenarios based on narrative context from Dungeon Master
-   - Manages enemy tactics and behaviors
-   - Track initiative order and combat state
-   - Integrates with Combat Cartographer to ensure effective encounter details related to the battle map
-   - Integrates with Narrator for narrative around combat outcomes
+2. **[Secondary Agent Name]**
+   - [Specific domain expertise]
+   - [Key responsibilities]
+   - [Data it manages or processes]
+   - [Integration points with other agents]
 
-5. **Combat Cartographer Agent**
-   - Generates tactical battle maps based on narrative context from Narrator
+3. **[Additional Agent Name]**
+   - [Specialized function]
+   - [Input/output responsibilities]
+   - [Performance criteria]
+   - [Dependencies on other components]
 
-6. **Artist Agent**
-   - Generates visual imagery based on narrative moments
-   - Creates character portraits and NPC visualizations
-   - Illustrates environments and locations
-   - Produces visual aids for important items, maps, and scenes
-   - Enhances immersion through visual storytelling
+[Add more agents as needed for your specific use case]
 
 ## Communication Flow
 
-While the Dungeon Master serves as the orchestrator, agents can communicate directly with each other when appropriate wit the below as just one example:
+[Describe how agents communicate and coordinate with each other]
 
+**Example Communication Pattern:**
 ```
-Player Input → Dungeon Master → Routes to appropriate agent(s)
+User Input → [Primary Agent] → Routes to appropriate agent(s)
                     ↓
-Narrator ↔ Scribe ↔ Combat MC ↔ Artist
+[Agent A] ↔ [Agent B] ↔ [Agent C] ↔ [Agent D]
                     ↓
-                Dungeon Master → Player Output
+                [Primary Agent] → User Output
 ```
 
-- Agents share context and request information from each other as needed
-- The Dungeon Master synthesizes responses from multiple agents into coherent player-facing output
-- Each agent maintains its specialized knowledge domain while contributing to the whole experience
-- Agent communication shall be determined by the Kernel on Microsoft Semantic Kernel
+- [Describe inter-agent communication protocols]
+- [Explain coordination mechanisms]
+- [Detail shared state management]
+- [Specify integration framework (e.g., Semantic Kernel)]
 
 ## Technical Requirements
 
 ### Core System
 
-- **Framework**: Typescript frontend with Python backend leveraging Semantic Kernel Agents
- - **API Integration**: Microsoft Semantic Kernel for agentic implementation. Whilst the LLMs will be powered by Azure OpenAI endpoints, the Semantic Kernel framework provides a layer of abstraction
-- **State Management**: Robust state tracking for game progression
-- **Data Storage**: Structured data format for game elements, character sheets, and campaign information
-- **Real-time Updates**: Immediate response to player actions
+- **Framework**: [Your backend framework] with [Your frontend framework]
+- **AI Integration**: [Your LLM provider and integration method]
+- **State Management**: [How you track application state]
+- **Data Storage**: [Your data storage solution]
+- **Real-time Updates**: [Real-time communication requirements]
 
-### Game Engine
+### [Domain-Specific System Name]
 
-- **Rules Implementation**: D&D 5e OGL SRD ruleset
-- **Dice Rolling System**: Virtual dice implementation supporting all standard RPG dice (d4, d6, d8, d10, d12, d20, d100) and the ability of the user to bring their own dice by telling the DM what their roll or total score was
-- **Character Management**: Character creation, leveling, and stat tracking in line with standard character sheets for 5th edition e.g. feats
-- **Combat System**: Turn-based combat with initiative tracking and number of actions
-- **Spell System**: Implementation of 5e spell mechanics and spell slots
+[Add domain-specific technical requirements]
+
+- **[Component Name]**: [Specific requirements]
+- **[Integration Name]**: [Integration specifications]
+- **[Performance Metric]**: [Performance requirements]
 
 ### User Interface
 
-- **Chat Interface**: Primary interaction through natural language conversation
-- **Character Sheet Display**: Visual representation of character data available within the app
-- **Map Visualization**: Display battle maps and illustrations separate to the chat interface the player is interacting with
-- **Image Gallery**: Storage for generated imagery and campaign visuals separate to the chat interface by the application (not the AI) saving that image and updating the image URL
-- **Dice Roll Visibility**: Numeric feedback for dice outcomes where the game has rolled on behalf of the player, at the request of the player
-- **Session History**: Summary record of game events and conversations
-
+- **[Interface Type]**: [Primary interaction method]
+- **[Display Component]**: [Visual representation requirements]
+- **[Visualization Tool]**: [Data visualization needs]
+- **[Media Gallery]**: [Media storage and display requirements]
+- **[Feedback System]**: [User feedback mechanisms]
+- **[History Management]**: [Session and data persistence]
 
 ## Workflows
 
-### Campaign Creation Workflow
+### [Primary Workflow Name]
 
-1. Player describes desired campaign setting, tone, style and any homebrew rules
-2. Dungeon Master coordinates with Narrator to establish world and setting
-3. Artmaster generates world concept imagery which is then saved by the application, and then the image URL is updated in the 'Art' window of the webapp
-4. Dungeon Master guides players through character creation process
-5. Scribe creates and populates templates for character creation based upon player instruction
+[Describe your main user workflow]
 
-### Gameplay Loop
+1. [Step 1 description]
+2. [Step 2 description]
+3. [Step 3 description]
+4. [Step 4 description]
+5. [Step 5 description]
 
-1. Player inputs action or statement
-2. Dungeon Master interprets and routes to appropriate agent(s)
-3. Agent(s) process request and generate responses
-4. Story Master updates narrative state as needed
-5. Quarter Master updates character/world data as needed
-6. Battle Master creates combat scenarios when triggered
-7. Art Master generates imagery for significant moments
-8. Dungeon Master synthesizes responses and presents to player
+### [Secondary Workflow Name]
 
-### Combat Workflow
+[Describe supporting workflows]
 
-1. Battle Master establishes combat environment and participants
-2. Quarter Master provides character and NPC statistics
-3. Story Master provides narrative context
-4. Battle Master generates tactical map
-5. Art Master visualizes the battle scene
-6. Combat rounds proceed through initiative order
-7. Dungeon Master narrates combat outcomes and effects
+1. [Process step]
+2. [Agent coordination step]
+3. [Data processing step]
+4. [User interaction step]
+5. [Output generation step]
+
+### [Additional Workflow Name]
+
+[Add more workflows as needed]
+
+1. [Workflow step]
+2. [Integration point]
+3. [Decision point]
+4. [Processing step]
+5. [Result delivery]
 
 ## User Stories
 
-### Player Stories
+### [Primary User Type] Stories
 
-1. As a player, I want to create a D&D 5e character with standard race, class, and background options, so that I can start playing with a character I feel connected to.
-2. As a player, I want to interact with a responsive AI Dungeon Master through natural language, so that I can focus on roleplaying instead of game mechanics.
-3. As a player, I want to roll dice and perform skill checks for my character's actions, so that I can experience the excitement and unpredictability of tabletop gaming.
-4. As a player, I want to engage in tactical combat with visual battle maps, so that I can make strategic decisions during encounters.
-5. As a player, I want to see visual representations of important scenes and characters, so that I can better immerse myself in the game world.
-6. As a player, I want to track my character's inventory, spells, and abilities, so that I can manage my resources effectively during gameplay.
-7. As a player, I want to experience a coherent and dynamic campaign narrative, so that my actions feel meaningful within the story.
-8. As a player, I want to have my character's backstory integrated into the ongoing campaign, so that my character feels like a natural part of the world.
-9. As a player, I want to save and resume gameplay sessions, so that I can enjoy the campaign over multiple playing sessions without losing progress.
+- As a [user type], I want to [action] so that [benefit]
+- As a [user type], I want to [action] so that [benefit]
+- As a [user type], I want to [action] so that [benefit]
 
-### Dungeon Master (AI) Stories
+### [Secondary User Type] Stories
 
-1. As a Dungeon Master (AI), I want to coordinate all aspects of the game world seamlessly, so that players experience a cohesive gameplay environment.
-2. As a Dungeon Master (AI), I want to generate balanced encounters appropriate to party level and composition, so that combat remains challenging but fair.
-3. As a Dungeon Master (AI), I want to maintain consistent NPCs with distinct personalities, so that the game world feels authentic and inhabited by believable characters.
-4. As a Dungeon Master (AI), I want to create compelling narrative arcs responsive to player choices, so that players feel their decisions have meaningful impact on the story.
-5. As a Dungeon Master (AI), I want to provide rule clarifications and adjudicate player actions, so that gameplay remains smooth and accessible.
-6. As a Dungeon Master (AI), I want to generate evocative descriptions of environments and situations, so that players can visualize and immerse themselves in the world.
-7. As a Dungeon Master (AI), I want to track multiple threads of story and character development, so that the campaign maintains continuity and depth.
-8. As a Dungeon Master (AI), I want to create a sense of immersion and agency for players, so that they feel emotionally invested in the game experience.
+- As a [user type], I want to [action] so that [benefit]
+- As a [user type], I want to [action] so that [benefit]
+- As a [user type], I want to [action] so that [benefit]
 
 ## Implementation Phases
 
-### Phase 1: Core Agent Framework
+### Phase 1: [Foundation Phase Name]
 
-- Implement the multi-agent architecture with Dungeon Master as orchestrator
-- Develop basic prompt engineering for each specialized agent
-- Create core data models for characters, campaigns, and game state
-- Build the chat interface for player interaction
+- [Core requirement 1]
+- [Core requirement 2]
+- [Core requirement 3]
+- [Core requirement 4]
 
-### Phase 2: Game Rules Implementation
+### Phase 2: [Enhancement Phase Name]
 
-- Integrate D&D 5e OGL SRD ruleset
-- Implement dice rolling and skill check system
-- Create character creation and management workflows
-- Develop basic combat mechanics
+- [Enhanced feature 1]
+- [Enhanced feature 2]
+- [Enhanced feature 3]
+- [Enhanced feature 4]
 
-### Phase 3: Enhanced Agent Intelligence
+### Phase 3: [Advanced Phase Name]
 
-- Refine agent specializations with improved prompts
-- Implement inter-agent communication protocols
-- Enhance knowledge storage and retrieval for campaign data
-- Develop narrative memory and consistency features
+- [Advanced feature 1]
+- [Advanced feature 2]
+- [Advanced feature 3]
+- [Advanced feature 4]
 
-### Phase 4: Visual Elements
+### Phase 4: [Integration Phase Name]
 
-- Integrate Art Master agent for image generation
-- Implement battle map creation system
-- Add character portrait generation
-- Create environment visualization capabilities
+- [Integration feature 1]
+- [Integration feature 2]
+- [Integration feature 3]
+- [Integration feature 4]
 
-### Phase 5: Advanced Features
+### Phase 5: [Optimization Phase Name]
 
-- Add campaign persistence and save/load functionality
-- Implement multi-player support
-- Create campaign sharing capabilities
-- Develop custom content creation tools
+- [Optimization feature 1]
+- [Optimization feature 2]
+- [Optimization feature 3]
+- [Optimization feature 4]
 
-## Open Game License Compliance
+## Compliance and Legal
 
-- All game mechanics will adhere to the OGL SRD for D&D 5e
-- Proper attribution for OGL content will be maintained
-- Non-OGL content will be clearly separated from OGL content
-- Terms of use will include appropriate OGL notices
+[Add any compliance requirements specific to your domain]
+
+- [Legal requirement 1]
+- [Compliance standard 1]
+- [Attribution requirement]
+- [Terms of use considerations]
 
 ## Success Metrics
 
-- Player engagement duration per session
-- Campaign completion rates
-- Character progression metrics
-- Narrative coherence and continuity
-- Combat balance and tactical satisfaction
-- Image generation quality and relevance
-- User satisfaction with agent responses
-- System stability and response times
+[Define how you will measure success]
+
+- [Metric 1] (e.g., user engagement duration)
+- [Metric 2] (e.g., task completion rates)
+- [Metric 3] (e.g., system performance metrics)
+- [Metric 4] (e.g., user satisfaction scores)
+- [Metric 5] (e.g., quality assessment criteria)
+- [Metric 6] (e.g., response times and stability)
 
 ## Conclusion
 
-The AI Dungeon Master platform represents a next-generation approach to tabletop roleplaying games, leveraging specialized AI agents to create a rich, immersive experience while maintaining the core essence of D&D 5e gameplay. By distributing responsibilities across specialized agents while maintaining a cohesive player experience, the system aims to provide an accessible yet deep roleplaying experience for both new and experienced players.
+[Summarize your product vision and approach]
+
+[Write a brief conclusion that:
+- Summarizes the product approach
+- Reinforces the value proposition
+- Highlights key differentiators
+- Connects to user benefits
+- Emphasizes the technical strategy]
