@@ -105,7 +105,7 @@ Narrator ↔ Scribe ↔ Combat MC ↔ Artist
 - **Chat Interface**: Primary interaction through natural language conversation
 - **Character Sheet Display**: Visual representation of character data available within the app
 - **Map Visualization**: Display battle maps and illustrations separate to the chat interface the player is interacting with
-- **Image Gallery**: Storage for generated imagery and campaign visuals separate to the chat interface
+- **Image Gallery**: Storage for generated imagery and campaign visuals separate to the chat interface by the application (not the AI) updating the image URL
 - **Dice Roll Visibility**: Numeric feedback for dice outcomes where the game has rolled on behalf of the player, at the request of the player
 - **Session History**: Summary record of game events and conversations
 
