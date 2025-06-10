@@ -6,15 +6,17 @@ applyTo: "**"
 
 ## Repository Structure
 
-- `backend/`: Logic related to the agentic AI python backend services
-- `frontend/`: Typescript & React frontend components and pages
-- `docs/`: Documentation
-- `docs/product_requirements_document.md`: Product requirements document
-- `docs/technical_specifications.md`: Technical specifications
-- `docs/adr/`: Architecture Decision Records
-- `docs/design/`: Design documents
-- `docs/specs/`: Specifications
-- `docs/user/`: User guides
+**This is a template repository. Customize the structure below for your specific project:**
+
+- `backend/`: Logic related to your Python backend services (create this directory)
+- `frontend/`: TypeScript & React frontend components and pages (create this directory)
+- `docs/`: Documentation (included in template)
+- `docs/product_requirements_document.md`: Product requirements document (template provided)
+- `docs/technical_specifications.md`: Technical specifications (create as needed)
+- `docs/adr/`: Architecture Decision Records (template provided)
+- `docs/design/`: Design documents (create as needed)
+- `docs/specs/`: Specifications (create as needed)
+- `docs/user/`: User guides (create as needed)
 
 ## Required before each commmit
 
