@@ -105,7 +105,7 @@ Narrator ↔ Scribe ↔ Combat MC ↔ Artist
 - **Chat Interface**: Primary interaction through natural language conversation
 - **Character Sheet Display**: Visual representation of character data available within the app
 - **Map Visualization**: Display battle maps and illustrations separate to the chat interface the player is interacting with
-- **Image Gallery**: Storage for generated imagery and campaign visuals separate to the chat interface by the application (not the AI) updating the image URL
+- **Image Gallery**: Storage for generated imagery and campaign visuals separate to the chat interface by the application (not the AI) saving that image and updating the image URL
 - **Dice Roll Visibility**: Numeric feedback for dice outcomes where the game has rolled on behalf of the player, at the request of the player
 - **Session History**: Summary record of game events and conversations
 
@@ -116,7 +116,7 @@ Narrator ↔ Scribe ↔ Combat MC ↔ Artist
 
 1. Player describes desired campaign setting, tone, style and any homebrew rules
 2. Dungeon Master coordinates with Narrator to establish world and setting
-3. Artmaster generates world concept imagery and then the image URL is updated in the 'Art' window of the webapp
+3. Artmaster generates world concept imagery which is then saved by the application, and then the image URL is updated in the 'Art' window of the webapp
 4. Dungeon Master guides players through character creation process
 5. Scribe creates and populates templates for character creation based upon player instruction
 
