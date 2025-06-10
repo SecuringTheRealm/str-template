@@ -33,6 +33,21 @@ This is a GitHub template repository designed for AI-powered applications using 
 
 📖 **See [TEMPLATE_USAGE.md](TEMPLATE_USAGE.md) for detailed instructions on using this template.**
 
+#### 🎯 Template Customization Checklist
+
+After creating your repository from this template, use this checklist to ensure you've customized everything:
+
+- [ ] Replace `[Your Project Name]` in README.md with your actual project name
+- [ ] Update project description placeholder in README.md
+- [ ] Update badge URLs with your username and repository name
+- [ ] Replace `[Your Name or Organization]` in LICENSE file
+- [ ] Customize `docs/product_requirements_document.md` with your requirements
+- [ ] Update background and problem statement with your specific context
+- [ ] Replace architecture section with your technical approach
+- [ ] Update `.github/instructions/general-coding.instructions.md` for your project structure
+- [ ] Create `backend/` and `frontend/` directories as needed
+- [ ] Remove this checklist and template notes when customization is complete
+
 ### 🏗️ What's Included
 
 - **Structured project layout** for Python backend and TypeScript frontend

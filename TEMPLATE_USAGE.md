@@ -37,6 +37,10 @@ After creating your repository, you'll need to replace template placeholders wit
    - Modify coding standards to match your project needs
    - Update any technology-specific instructions
 
+5. **License**
+   - Update `LICENSE` file with your name or organization
+   - Replace `[Your Name or Organization]` with the actual copyright holder
+
 ### 🔧 Step 3: Set Up Development Environment
 
 1. **Clone your new repository**
