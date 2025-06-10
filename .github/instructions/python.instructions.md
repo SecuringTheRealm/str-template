@@ -10,3 +10,7 @@ Apply the [general coding guidelines](./general-coding.instructions.md) to all c
 
 - Use Ruff for linting and formatting
 - Ensure all linting and formatting rules pass before submitting code
+
+## Package management
+
+- Use uv for package and dependency management
