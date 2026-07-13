@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains Architecture Decision Records (ADRs) for the Agentic Adventures project. ADRs are used to document important architectural decisions, their context, and consequences.
+This directory contains Architecture Decision Records (ADRs) for this project. ADRs are used to document important architectural decisions, their context, and consequences.
 
 ## How to Use ADRs
 
